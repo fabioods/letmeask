@@ -33,7 +33,10 @@
     ],
     "prettier/prettier": "error",
     "no-use-before-define": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "react/button-has-type": "off",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "settings": {
     "import/parsers": {
