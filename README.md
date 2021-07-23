@@ -61,7 +61,7 @@ yarn start
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/) - Versão 14.17.3 (versão 16.x não é suportada)
 - [Typescript](https://www.typescriptlang.org/)
 - [Firebase](https://console.firebase.google.com/)
 
