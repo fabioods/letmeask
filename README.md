@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to Let me ask 🙋</h1>
+<p align="center">
+  <img alt="Preview" src="https://raw.githubusercontent.com/rocketseat-education/nlw-06-reactjs/d64687c482991f6796f56a335126cd658db7f53f/.github/logo.svg">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/fah_ds" target="_blank">
+    <img alt="Twitter: https://twitter.com/fah_ds" src="https://img.shields.io/twitter/follow/fah_ds.svg?style=social" />
+  </a>
+</p>
 
-## Available Scripts
+> Projeto criado na NLW Together de 06/2021
 
-In the project directory, you can run:
+<p align="center">
+  <img alt="Preview" src="https://i.ibb.co/4RTZQQ4/Design-sem-nome.png">
+</p>
 
-### `yarn start`
+## Instalação
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone o projeto:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+git clone https://github.com/fabioods/letmeask.git
+```
 
-### `yarn test`
+Entre na pasta do projeto.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+cd letmeask
+```
 
-### `yarn build`
+Instale as dependências do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+yarn install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Crie um arquivo `.env.local` e coloque o seguinte com as suas configurações do firebase:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+REACT_APP_API_KEY = "";
+REACT_APP_AUTH_DOMAIN = "";
+REACT_APP_DATABASE_URL = "";
+REACT_APP_PROJECT_ID = "";
+REACT_APP_STORAGE_BUCKET = "";
+REACT_APP_MESSAGING_SENDER_ID = "";
+REACT_APP_APP_ID = "";
+```
 
-### `yarn eject`
+## Uso
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ✨ Tecnologias
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Node.js](https://nodejs.org/en/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Firebase](https://console.firebase.google.com/)
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Fábio dos Santos**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Website: https://www.linkedin.com/in/fabioods/
+- Twitter: [@https:\/\/twitter.com\/fah_ds](https://twitter.com/https://twitter.com/fah_ds)
+- Github: [@fabioods](https://github.com/fabioods)
+- LinkedIn: [@https:\/\/www.linkedin.com\/in\/fabioods\/](https://linkedin.com/in/https://www.linkedin.com/in/fabioods/)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
