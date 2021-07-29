@@ -4,12 +4,15 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
+import { AuthContext, useContext } from '../hooks/useAuth';
 import '../styles/auth.scss';
 
 const Home: React.FC = () => {
   const history = useHistory();
+  const { user, signInWithGoogle } = useContext(AuthContext);
 
-  const navigateToNewRoom = () => {
+  const handleCreateRoom = async () => {
+    if (!user) await signInWithGoogle();
     history.push('/rooms/new');
   };
 
@@ -26,14 +29,17 @@ const Home: React.FC = () => {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Logotipo" />
-          <button
-            type="button"
-            className="create-room"
-            onClick={navigateToNewRoom}
-          >
-            <img src={googleIconImg} alt="Logo do Google" />
-            Crie sua sala com o Google
-          </button>
+          <h1>{user?.name}</h1>
+          {!user && (
+            <button
+              type="button"
+              className="create-room"
+              onClick={handleCreateRoom}
+            >
+              <img src={googleIconImg} alt="Logo do Google" />
+              Crie sua sala com o Google
+            </button>
+          )}
           <div className="separator">ou entre em uma sala</div>
           <form>
             <input type="text" placeholder="Digite o código da sala" />
