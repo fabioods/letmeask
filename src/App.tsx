@@ -21,7 +21,7 @@ function App(): JSX.Element {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
-    auth.onAuthStateChanged(loggedUser => {
+    const unsubscribe = auth.onAuthStateChanged(loggedUser => {
       if (loggedUser) {
         const { displayName, photoURL, uid } = loggedUser;
         if (!displayName || !photoURL)
@@ -29,6 +29,7 @@ function App(): JSX.Element {
         setUser({ id: uid, name: displayName, avatar: photoURL });
       }
     });
+    return () => unsubscribe();
   }, []);
 
   const signInWithGoogle = async (): Promise<void> => {
