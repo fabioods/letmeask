@@ -36,7 +36,9 @@
     "camelcase": "off",
     "react/button-has-type": "off",
     "react/jsx-props-no-spreading": "off",
-    "import/no-duplicates": "off"
+    "import/no-duplicates": "off",
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "import/parsers": {
