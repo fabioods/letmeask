@@ -4,12 +4,12 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
-import { AuthContext, useContext } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuth';
 import '../styles/auth.scss';
 
 const Home: React.FC = () => {
   const history = useHistory();
-  const { user, signInWithGoogle } = useContext(AuthContext);
+  const { user, signInWithGoogle } = useAuth();
 
   const handleCreateRoom = async () => {
     if (!user) await signInWithGoogle();
