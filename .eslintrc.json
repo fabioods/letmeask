@@ -39,7 +39,8 @@
     "import/no-duplicates": "off",
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-alert": "off"
   },
   "settings": {
     "import/parsers": {
