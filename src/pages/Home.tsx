@@ -23,6 +23,7 @@ const Home: React.FC = () => {
     if (roomCode.trim() === '') return;
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
     if (!roomRef.exists()) alert('Room does not exist');
+    if (roomRef.val().endedAt) alert('Room has ended');
     else history.push(`/rooms/${roomCode}`);
   };
 
