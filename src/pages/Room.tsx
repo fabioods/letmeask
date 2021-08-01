@@ -1,35 +1,13 @@
-import React, { FormEvent, useEffect, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
+import { Question } from '../components/Question';
 import { RoomCode } from '../components/RoomCode';
 import { useAuth } from '../hooks/useAuth';
+import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 import '../styles/room.scss';
-
-type FirebaseQuestions = Record<
-  string,
-  {
-    author: {
-      name: string;
-      avatar: string;
-    };
-    content: string;
-    isHighlighted: boolean;
-    isAnswered: boolean;
-  }
->;
-
-type Question = {
-  id: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-  content: string;
-  isHighlighted: boolean;
-  isAnswered: boolean;
-};
 
 type RoomParams = {
   id: string;
@@ -40,31 +18,9 @@ const Room: React.FC = () => {
   const roomID = params.id;
 
   const { user } = useAuth();
+  const { questions, title } = useRoom(roomID);
 
-  const [questions, setQuestions] = useState<Question[]>([]);
   const [question, setQuestion] = useState<string>('');
-  const [title, setTitle] = useState<string>('');
-
-  useEffect(() => {
-    const roomRef = database.ref(`rooms/${roomID}`);
-    roomRef.on('value', room => {
-      const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
-      const parsedQuestions = Object.entries(firebaseQuestions).map(
-        ([key, value]) => {
-          return {
-            id: key,
-            content: value.content,
-            author: value.author,
-            isHighlighted: value.isHighlighted,
-            isAnswered: value.isAnswered,
-          };
-        }
-      );
-      setQuestions(parsedQuestions);
-      setTitle(databaseRoom.title);
-    });
-  }, [roomID]);
 
   const handleSendNewQuestion = async (event: FormEvent) => {
     event.preventDefault();
@@ -73,7 +29,7 @@ const Room: React.FC = () => {
     if (!user) throw new Error('You must be logged in to post a question');
 
     const newQuestion = {
-      question,
+      content: question,
       author: {
         name: user?.name,
         avatar: user?.avatar,
@@ -125,7 +81,11 @@ const Room: React.FC = () => {
           </div>
         </form>
 
-        {JSON.stringify(questions, null, 2)}
+        <div className="question-list">
+          {questions.map(q => (
+            <Question key={q.id} content={q.content} author={q.author} />
+          ))}
+        </div>
       </main>
     </div>
   );
