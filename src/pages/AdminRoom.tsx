@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import deleteImg from '../assets/images/delete.svg';
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
@@ -13,11 +13,22 @@ type RoomParams = {
   id: string;
 };
 
-const AdminRoom: React.FC = () => {
+const AdminRoom = () => {
   const params = useParams<RoomParams>();
   const roomID = params.id;
+  const history = useHistory();
 
   const { questions, title } = useRoom(roomID);
+
+  const handleEndRoom = async () => {
+    if (window.confirm('Tem certeza que você deseja excluir esta sala?')) {
+      database.ref(`rooms/${roomID}`).update({
+        endedAt: new Date(),
+      });
+
+      history.push('/');
+    }
+  };
 
   const handleDeleteQuestion = async (questionID: string) => {
     if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
@@ -32,7 +43,9 @@ const AdminRoom: React.FC = () => {
           <img src={logoImg} alt="Let me ask" />
           <div>
             <RoomCode code={roomID} />
-            <Button isOutlined>Encerrar Sala</Button>
+            <Button isOutlined onClick={() => handleEndRoom()}>
+              Encerrar Sala
+            </Button>
           </div>
         </div>
       </header>
