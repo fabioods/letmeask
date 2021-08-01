@@ -16,7 +16,7 @@
 > Projeto criado na NLW Together de 06/2021
 
 <p align="center">
-  <img alt="Preview" src="https://i.ibb.co/4RTZQQ4/Design-sem-nome.png">
+  <img alt="Preview" src="https://i.ibb.co/hL949Tz/Capturar.png">
 </p>
 
 ## Instalação
@@ -42,13 +42,13 @@ yarn install
 Crie um arquivo `.env.local` e coloque o seguinte com as suas configurações do firebase:
 
 ```js
-REACT_APP_API_KEY = "";
-REACT_APP_AUTH_DOMAIN = "";
-REACT_APP_DATABASE_URL = "";
-REACT_APP_PROJECT_ID = "";
-REACT_APP_STORAGE_BUCKET = "";
-REACT_APP_MESSAGING_SENDER_ID = "";
-REACT_APP_APP_ID = "";
+REACT_APP_API_KEY = '';
+REACT_APP_AUTH_DOMAIN = '';
+REACT_APP_DATABASE_URL = '';
+REACT_APP_PROJECT_ID = '';
+REACT_APP_STORAGE_BUCKET = '';
+REACT_APP_MESSAGING_SENDER_ID = '';
+REACT_APP_APP_ID = '';
 ```
 
 ## Uso
