@@ -1,5 +1,7 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import answerImg from '../assets/images/answer.svg';
+import checkImg from '../assets/images/check.svg';
 import deleteImg from '../assets/images/delete.svg';
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
@@ -36,6 +38,18 @@ const AdminRoom = () => {
     }
   };
 
+  const handleCheckQuestionAsAnswered = async (questionID: string) => {
+    await database.ref(`rooms/${roomID}/questions/${questionID}`).update({
+      isAnswered: true,
+    });
+  };
+
+  const handleHighlightQuestion = async (questionID: string) => {
+    await database.ref(`rooms/${roomID}/questions/${questionID}`).update({
+      isHighlighted: true,
+    });
+  };
+
   return (
     <div id="page-room">
       <header>
@@ -57,7 +71,30 @@ const AdminRoom = () => {
 
         <div className="question-list">
           {questions.map(q => (
-            <Question key={q.id} content={q.content} author={q.author}>
+            <Question
+              key={q.id}
+              content={q.content}
+              author={q.author}
+              isHighlighted={q.isHighlighted}
+              isAnswered={q.isAnswered}
+            >
+              {!q.isAnswered && (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => handleCheckQuestionAsAnswered(q.id)}
+                  >
+                    <img src={checkImg} alt="Marcar pergunta como respondida" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleHighlightQuestion(q.id)}
+                  >
+                    <img src={answerImg} alt="Dar destaque a pergunta" />
+                  </button>
+                </>
+              )}
+
               <button type="button" onClick={() => handleDeleteQuestion(q.id)}>
                 <img src={deleteImg} alt="Deletar pergunta" />
               </button>
