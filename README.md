@@ -8,8 +8,8 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/fah_ds" target="_blank">
-    <img alt="Twitter: https://twitter.com/fah_ds" src="https://img.shields.io/twitter/follow/fah_ds.svg?style=social" />
+  <a href="https://twitter.com/fabioods" target="_blank">
+    <img alt="Twitter: https://twitter.com/fabioods" src="https://img.shields.io/twitter/follow/fabioods.svg?style=social" />
   </a>
 </p>
 
@@ -70,7 +70,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 👤 **Fábio dos Santos**
 
 - Website: https://www.linkedin.com/in/fabioods/
-- Twitter: [@https:\/\/twitter.com\/fah_ds](https://twitter.com/https://twitter.com/fah_ds)
+- Twitter: [@fabioods](https://twitter.com/fabioods)
 - Github: [@fabioods](https://github.com/fabioods)
 - LinkedIn: [@https:\/\/www.linkedin.com\/in\/fabioods\/](https://linkedin.com/in/https://www.linkedin.com/in/fabioods/)
 
